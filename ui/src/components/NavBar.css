@@ -1,0 +1,21 @@
+.navigation {
+  display: flex;
+  flex-direction: row;
+  /* gap: 0.5rem; */
+}
+
+.test {
+  background-color: lightgray;
+  font-size: 25px;
+  flex: auto;
+  border: 3px solid darkgray;
+}
+
+.active:hover {
+  border: 5px solid black;
+}
+
+NavLink {
+  flex: 0 0 0;
+  border: 5px solid red;
+}
