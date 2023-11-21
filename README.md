@@ -39,3 +39,8 @@
 ### 1. npm ci
 
 ### 2. npm start
+
+
+# Sequence Diagram
+[Sequence Diagram](./diagram.png)
+
