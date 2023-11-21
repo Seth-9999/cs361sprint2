@@ -1,34 +1,44 @@
 # API
+###### assumption: requested MongoDB connection string from me to update .env
 
-## assumption: requested MongoDB connection string from me to update .env
+###  Steps to run microservice (rating system)
 
-### steps to run microservice (rating system)
+1. npm ci
 
-### 1. npm ci
+2. npm install dotenv
 
-### 2. npm install dotenv
+3. npm start  
 
-### 3. npm start
+### API endpoints
+##### GET requests
 
-## API endpoints
+* GET /apiv01/reviews/:\_APIKey
+     - No body accepted -> Retrieves all reviews for your system (your system is identified by API Key)
 
-### GET requests
+* GET /apiv01/reviews/:\_APIKey/:\_productID
+     - No body accepted -> retrieves all reviews for desired product for your system (your system is identified by API Key)
 
-#### GET /apiv01/reviews/:\_APIKey | No body accepted -> Retrieves all reviews for supplied system
+#### POST requests
 
-#### GET /apiv01/reviews/:\_APIKey/:\_productID | No body accepted -> retrieves all reviews for desired product
+* POST /apiv01/reviews
+     - Body(APIKey, productID, title, body) -> Create a review with specified title and text (your system is identified by API Key)
 
-### POST requests
+#### PUT requests
 
-#### POST /apiv01/reviews |Body(APIKey, productID, title, body) -> Create a review
-
-### PUT requests
-
-#### PUT /apiv01/reviews/:\_commentID - |Body(APIKey, productID, title, body) > update a review's info
+* PUT /apiv01/reviews/:\_commentID
+     - Body(APIKey, productID, title, body) > update a specific review's info (your system is identified by API Key)
 
 ### DELETE requests
 
-#### DELETE /apiv01/reviews/:\_commentID |No body accepted -> delete a speciic comment
+* DELETE /apiv01/reviews/:\_commentID
+    - No body accepted -> delete a specific comment
+
+
+# Sequence Diagram
+[Sequence Diagram](./diagram.png)
+
+![Image](./diagram.png)
+
 
 # UI
 
@@ -39,8 +49,3 @@
 ### 1. npm ci
 
 ### 2. npm start
-
-
-# Sequence Diagram
-[Sequence Diagram](./diagram.png)
-
